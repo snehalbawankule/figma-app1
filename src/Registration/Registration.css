@@ -1,0 +1,32 @@
+.cls-Noto {
+   font-family: 'Noto Sans SC';
+   font-weight: 400;
+   font-size: 24px;
+   text-align: center;
+   color: #000000;
+}
+.cls-Robo {
+    font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+    font-size: 24px;
+    text-align: center;
+    color: rgba(117, 108, 108, 0.57);
+  }
+  .input-box {
+    width: 325px;
+    height: 68px;
+    border: none;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-left: 35px;
+    margin-top: 15px;
+    font-family: 'Noto Sans SC';
+    font-size: 18px;
+  }
+  .link{
+      font-family: 'Roboto', sans-serif;
+      color: #2ED2C9;
+      border: none;
+      text-decoration: none;
+      font-size: 22px;
+  }
