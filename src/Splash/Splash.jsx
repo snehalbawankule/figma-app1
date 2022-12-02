@@ -16,7 +16,7 @@ const Splash =({ ...props })=> {
                </ShapeEllipse>
                <ViewBoy></ViewBoy>
           <ClsNoto01 >Get things done with todo</ClsNoto01>
-          <ClsRobo>Lorem ipsum dolor sit amet,consectetur adipiscing elit. Morbi ipsum neque ut consequat.</ClsRobo>
+          <ClsRobo>Lorem ipsum dolor sit amet,consectetur adipiscing elit. Morbi ipsum neque ut consquat.</ClsRobo>
           <StyledButton>Get Started</StyledButton>" onClick={navRegistration}
         </Container>
       );};

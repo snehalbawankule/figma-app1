@@ -59,6 +59,5 @@ font-weight: 400;
 font-size: 24px;
 text-align: center;
 color: rgba(117, 108, 108, 0.57);`;
-  
 
 export {Container, ShapeEllipse, StyledButton, ClsNoto01, ClsRobo, ViewStatusbar, ViewBoy };
