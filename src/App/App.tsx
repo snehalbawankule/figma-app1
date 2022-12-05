@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Routes ,Route } from 'react-router-dom';
 import Splash from '../splash/splash';
 import Registration from '../registration/registration';
-import Home from '../Home/Home';
+import Home from '../home/home';
 import Login from '../login/login';
 class App extends Component{
 render(){

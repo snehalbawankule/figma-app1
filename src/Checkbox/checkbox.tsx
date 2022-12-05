@@ -1,7 +1,6 @@
 import { useState, useEffect} from 'react';
-import '../Home/Home.css';
 import './checkbox.css';
-function Checkbox001  () {
+const Checkbox  =()=>{
   const [todo, setTodo] = useState([])
   useEffect(()=>{
     fetch('https://jsonplaceholder.typicode.com/todos/')
@@ -15,12 +14,10 @@ function Checkbox001  () {
     console.log({ id:id, title: title, completed:checked }); 
   }
 return (
-      <>
         {todo.map(({id, title}, index)=> {
           return <div id='check-boxes' key={index} onChange={(e)=>handleSubmit(e,id,title)} >
           <span>  <input type="checkbox" id="check-box" value={id} /> </span>
             <label className='checkbox-label' htmlFor="check-box" value={title} >{title}</label><br />
           </div> })}
-      </>
 )};
-  export default Checkbox001;
+  export default Checkbox;
