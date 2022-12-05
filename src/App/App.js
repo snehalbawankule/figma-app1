@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Routes ,Route } from 'react-router-dom';
-import Splash from '../Splash/Splash.jsx';
+import Splash from '../Splash/splash';
 import Registration from '../Registration/Registration.jsx';
 import Home from '../Home/Home';
 import Login from '../Login/Login.jsx';

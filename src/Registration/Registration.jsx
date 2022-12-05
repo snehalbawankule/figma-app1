@@ -1,5 +1,5 @@
 import React, { useState} from "react";
-import {Container, ShapeEllipse, StyledButton,ViewStatusbar} from '../Splash/splash';
+import {Container, ShapeEllipse, GetStartedButton,ViewStatusbar} from '../Splash/splash.styled';
 import { TextWrap, Input, LoginLink, ClsNoto02} from "./Registration";
 import {useNavigate } from 'react-router-dom';
 import { formValidate } from "../validate/formValidate";
@@ -34,7 +34,7 @@ const Registration=()=> {
         <Input type="email" name="email" placeholder="Enter your email"  onChange={handleChange} value={userInfo.email} required />
         <Input type="password" id="pass10"name="password" value={userInfo.password}  onChange={handleChange} pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" placeholder="Enter Password" required/>
         <Input type="password"  id="pass20" name="password1" onChange={handleChange}  value={userInfo.password1}placeholder="Confirm Password" required/>
-        <StyledButton onClick={formValidate}>Get Started</StyledButton>
+        <GetStartedButton onClick={formValidate}>Get Started</GetStartedButton>
         <TextWrap style={{fontSize:18}}>Already have an account?<LoginLink onClick={navLogin}>Login</LoginLink></TextWrap>
       </form>
     </Container>
