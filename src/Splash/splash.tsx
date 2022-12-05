@@ -7,7 +7,7 @@ import { useNavigate } from "react-router";
 const Splash =()=> {
   const navigate = useNavigate();
   const navRegistration = () => {
-  navigate('/Registration');
+  navigate('/registration');
   };
     return (  
             <Container>

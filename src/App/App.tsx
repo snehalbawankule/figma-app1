@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Routes ,Route } from 'react-router-dom';
-import Splash from '../Splash/splash';
-import Registration from '../Registration/Registration.jsx';
+import Splash from '../splash/splash';
+import Registration from '../registration/registration';
 import Home from '../Home/Home';
-import Login from '../Login/Login.jsx';
+import Login from '../login/login';
 class App extends Component{
 render(){
   return(
