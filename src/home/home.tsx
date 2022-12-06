@@ -21,7 +21,7 @@ function Home() {
              <TaskList>Tasks list</TaskList>
              <Box>
              <DailyTasks>Daily Tasks</DailyTasks>
-              <Checkbox/>
+               <Checkbox/>
              </Box>
        </Container>
      );

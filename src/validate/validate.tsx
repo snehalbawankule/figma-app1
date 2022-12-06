@@ -1,5 +1,6 @@
-export function formValidate(){
-    var password = document.getElementById("pass10"), confirm_password = document.getElementById("pass20");
+export function validate(){
+  const password: HTMLElement | any = document.getElementById('pass10');
+  const confirm_password: HTMLElement | any = document.getElementById('pass20');
   
   function validatePassword(){
     if(password.value !== confirm_password.value) {
@@ -7,7 +8,8 @@ export function formValidate(){
     } else {
       confirm_password.setCustomValidity('');
     }
-  } 
+  }
+  
   password.onchange = validatePassword;
   confirm_password.onkeyup = validatePassword; 
 }  

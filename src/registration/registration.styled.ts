@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 const TextWrap = styled.h3`
 font-family: 'Roboto', sans-serif;
 font-weight: 400;
@@ -13,6 +14,19 @@ border-radius: 30px;
 padding-left: 20px;
 margin-left: 35px;
 margin-top: 15px;
+font-family: 'Noto Sans SC';
+font-size: 18px;
+::placeholder {
+    color: black;
+  }`;
+  const Input1 = styled.input`
+width: 325px;
+height: 68px;
+border: none;
+border-radius: 30px;
+padding-left: 20px;
+margin-left: 35px;
+margin-top: 63px;
 font-family: 'Noto Sans SC';
 font-size: 18px;
 ::placeholder {
@@ -34,4 +48,4 @@ font-size: 18px;
   margin-top : 37px;
   `;
 
-export {TextWrap, Input, LoginLink, ClsNoto02};
+export {TextWrap, Input, LoginLink, ClsNoto02, Input1};

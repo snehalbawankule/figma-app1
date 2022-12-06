@@ -1,6 +1,7 @@
 import { useState, useEffect} from 'react';
-import './checkbox.css';
-const Checkbox  =()=>{
+import React from 'react';
+import {Input, CheckBox, CheckBoxes,Label} from './checkbox.styled';
+const Checkbox1  =()=>{
   const [todo, setTodo] = useState([])
   useEffect(()=>{
     fetch('https://jsonplaceholder.typicode.com/todos/')
@@ -8,16 +9,22 @@ const Checkbox  =()=>{
     .then(json => setTodo(json))
     .catch(error => console.log(error))
    },[todo])
-  const handleSubmit=(e,id,title)=>{
-    e.preventDefault();
-    const checked=e.target.checked;
-    console.log({ id:id, title: title, completed:checked }); 
+
+    const handleSubmit = (e: React.FormEvent)=> {
+    //const checked=e.target.checked;
+    console.log({ id:'', title: '' }); 
   }
 return (
+    <CheckBox>
         {todo.map(({id, title}, index)=> {
-          return <div id='check-boxes' key={index} onChange={(e)=>handleSubmit(e,id,title)} >
-          <span>  <input type="checkbox" id="check-box" value={id} /> </span>
-            <label className='checkbox-label' htmlFor="check-box" value={title} >{title}</label><br />
-          </div> })}
-)};
-  export default Checkbox;
+          return <CheckBoxes key={index} onChange={(e)=>handleSubmit(e)} >
+          <Input id="check-box" />
+            <Label className='checkbox-label' htmlFor="check-box" >{title}</Label>
+          </CheckBoxes>})}
+      </CheckBox>
+       
+)
+        };
+
+
+  export default Checkbox1; 

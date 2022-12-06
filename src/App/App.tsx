@@ -9,7 +9,7 @@ render(){
   return(
           <Routes>
           <Route path='/' element={<Splash/>} />
-          <Route path='/Registration' element={<Registration/>} />
+          <Route path='/Registration' element={<Registration/>}  />
           <Route path='/Home' element={<Home/>} />
           <Route path='/Login' element={<Login/>} />
          </Routes>
