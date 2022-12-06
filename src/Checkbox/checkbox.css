@@ -1,26 +1,6 @@
 #check-box:checked + label {
     text-decoration: line-through;
   }
-#check-box{
-  margin-left: 50px;
-  appearance: none;
-  width: 20px;
-  height: 15px;
-  outline:0.2em solid black;
-  } 
-#check-boxes{
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-.checkbox-label{
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  padding-left: 10px;
-  color: #5B716F;
-}
-
   label::first-letter {
     text-transform: uppercase;
   }

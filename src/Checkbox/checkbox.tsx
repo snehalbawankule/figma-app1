@@ -18,8 +18,8 @@ return (
     <CheckBox>
         {todo.map(({id, title}, index)=> {
           return <CheckBoxes key={index} onChange={(e)=>handleSubmit(e)} >
-          <Input id="check-box" />
-            <Label className='checkbox-label' htmlFor="check-box" >{title}</Label>
+          <Input/>
+           <Label className='checkbox-label' htmlFor="check-box" >{title}</Label>
           </CheckBoxes>})}
       </CheckBox>
        
