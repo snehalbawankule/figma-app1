@@ -1,5 +1,6 @@
 import { useState, useEffect} from 'react';
 import React from 'react';
+import './checkbox.css';
 import {Input, CheckBox, CheckBoxes,Label} from './checkbox.styled';
 const Checkbox1  =()=>{
   const [todo, setTodo] = useState([])
@@ -18,7 +19,7 @@ return (
     <CheckBox>
         {todo.map(({id, title}, index)=> {
           return <CheckBoxes key={index} onChange={(e)=>handleSubmit(e)} >
-          <Input/>
+          <Input id='check-box'/>
            <Label className='checkbox-label' htmlFor="check-box" >{title}</Label>
           </CheckBoxes>})}
       </CheckBox>
