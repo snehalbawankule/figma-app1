@@ -3,7 +3,6 @@ const CheckBoxes =styled.div`
 display: flex;
 align-items: center;
 margin-bottom: 15px;`
-
 const CheckBox=styled.div`
 `
 const Input= styled.span`
@@ -21,6 +20,4 @@ font-weight: 700;
 padding-left: 15px;
 color: #5B716F;
 `;
-
-
 export{CheckBoxes,CheckBox,Input,Label};
