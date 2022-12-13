@@ -1,10 +1,7 @@
-/*import { configureStore} from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
+import storeReducer from './reducer';
 
+export const store = configureStore( {
+    reducer:storeReducer,
+});
 
-const store = configureStore{}
-
-store.dispatch({
-  type: 'ADD_TODO',
-  text: 'Read the docs'
-})
-export default store;*/
