@@ -13,7 +13,7 @@ interface RegistrationProps{
     password1:string;
 }
 const Registration =()=> {
-  const [userInfo, setUserInfo] =useState<Partial <RegistrationProps>>({});
+  const [userInfo, setUserInfo] =useState<Partial<RegistrationProps>>({});
   const handleSubmit = (e: React.FormEvent)=> {
     console.log(userInfo);
     setUserInfo({ name: "", email: "", password: "", password1:""});

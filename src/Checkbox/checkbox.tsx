@@ -12,20 +12,23 @@ import {Input, CheckBox, CheckBoxes,Label} from './checkbox.styled';
     .then(json => setTodo(json))
     .catch(error => console.log(error))
    },[todo])
+   const [isChecked, setIsChecked] = useState(true);
     
    const changeHandler=(e:any, id:number,title:string)=>{
+    if (e.target.checked) {
+      setIsChecked(true)
+    } else {
+      setIsChecked(false)
+    }
     const newTodo={id:id, title:title, completed: isChecked}
-    dispatch(addTodo(newTodo))
+    dispatch(addTodo(newTodo));
    }
-   const [isChecked, setIsChecked] = useState(true); 
-   const handleChange=()=>{
-        setIsChecked(!isChecked);
-     }
+  
 return (
   <CheckBox>
   {todo.map(({id, title})=> {
-    return <CheckBoxes key={id} onClick={(e)=>changeHandler(e, id, title)}>
-    <Input id='check-box' onClick={handleChange}/>
+    return <CheckBoxes key={id}   onClick={(e)=>changeHandler(e, id, title)}>
+    <Input  id='check-box'/>
      <Label className='checkbox-label' htmlFor="check-box" >{title}</Label>
     </CheckBoxes>})}
 </CheckBox>
