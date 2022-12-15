@@ -1,19 +1,30 @@
 import { createSlice } from "@reduxjs/toolkit";
-export const storeSlice=createSlice({
-    name:'todos',
-    initialState:{
-        todos:{
-            id: '',
-            title: '',
-            completed: false,
-          }
-        },
-    reducers:{
-        addTodo:(state, action)=>{
-            state.todos = action.payload;
-        }
-    }
-
-})
-export const {addTodo}=storeSlice.actions;
-export default storeSlice.reducer;
+const initialState = {
+  todo: [
+    {
+      id: "",
+      title: "",
+      completed: false,
+    },
+  ],
+};
+const { actions, reducer } = createSlice({
+  name: "todos",
+  initialState,
+  reducers: {
+    addTodo(state, action) {
+      state.todo = action.payload;
+    },
+    getTodo(state, action) {
+      const { id, title, completed } = action.payload;
+      const prevTodo = state.todo.find((item) => item.id === id);
+      if (prevTodo) {
+        prevTodo.title = title;
+        prevTodo.id = id;
+        prevTodo.completed = completed;
+      }
+    },
+  },
+});
+export { actions };
+export default reducer;

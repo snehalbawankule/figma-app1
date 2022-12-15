@@ -30,7 +30,7 @@ const Registration =()=> {
                </ShapeEllipse>
        <ClsNoto02>Welcome Onboard!</ClsNoto02>
        <TextWrap>Let's help you meet up your tasks.</TextWrap>
-       <form onSubmit={handleSubmit}>
+       <form onSubmit={(e)=>{handleSubmit(e); navLogin();}}>
         <Input type="text"  style={{marginTop:63}} name="name" placeholder="Enter your full name" onChange={e => setUserInfo({...userInfo, name: e.target.value })} minLength={5} maxLength={10} required/>
         <Input type="email" name="email" placeholder="Enter your email"  onChange={e => setUserInfo({...userInfo, email: e.target.value })} required />
         <Input type="password" id="pass10"name="password"  onChange={e => setUserInfo({...userInfo, password: e.target.value })} pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" placeholder="Enter Password" required/>

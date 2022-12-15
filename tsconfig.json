@@ -3,7 +3,10 @@
     "jsx": "react",
     "target": "es2016",                                  
     "module": "commonjs",                                
-    "esModuleInterop": true,                            
+    "esModuleInterop": true, 
+    "lib": [
+        "es5", "es6", "dom", "dom.iterable"
+    ],                           
     "forceConsistentCasingInFileNames": true,        
     "strict": true,                                      
     "skipLibCheck": true   ,                           
@@ -13,5 +16,6 @@
         "include": [
         "src"
     ]
+    
 }
 

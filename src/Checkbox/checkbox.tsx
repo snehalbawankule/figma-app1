@@ -1,39 +1,44 @@
-import React,  { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import {addTodo} from '../store/reducer';
-import './checkbox.css';
-import {Input, CheckBox, CheckBoxes,Label} from './checkbox.styled';
- const Checkbox1=()=>{
-  const dispatch=useDispatch();
-  const [todo, setTodo] = useState([]);
-  useEffect(()=>{
-    fetch('https://jsonplaceholder.typicode.com/todos/')
-    .then(response => response.json())
-    .then(json => setTodo(json))
-    .catch(error => console.log(error))
-   },[todo])
-   const [isChecked, setIsChecked] = useState(true);
-    
-   const changeHandler=(e:any, id:number,title:string)=>{
+import React, { useState, useEffect } from "react";
+import { actions } from "../store/reducer";
+import { addTodo } from "../store/services";
+import { useAppSelector, useAppDispatch } from "../hooks/hooks";
+import "./checkbox.css";
+import { CheckBoxes, CheckBox, Input, Label } from "./checkbox.styled";
+const Checkbox1 = () => {
+  const dispatch = useAppDispatch();
+  const todo = useAppSelector((state) => state.todos.todo);
+  useEffect(() => {
+    dispatch(addTodo());
+  }, [dispatch]);
+  const [isChecked, setIsChecked] = useState(true);
+  const changeHandler = (e: any, id: string, title: string) => {
     if (e.target.checked) {
-      setIsChecked(true)
+      setIsChecked(true);
     } else {
-      setIsChecked(false)
+      setIsChecked(false);
     }
-    const newTodo={id:id, title:title, completed: isChecked}
-    dispatch(addTodo(newTodo));
-   }
-  
-return (
-  <CheckBox>
-  {todo.map(({id, title})=> {
-    return <CheckBoxes key={id}   onClick={(e)=>changeHandler(e, id, title)}>
-    <Input  id='check-box'/>
-     <Label className='checkbox-label' htmlFor="check-box" >{title}</Label>
-    </CheckBoxes>})}
-</CheckBox>
-)
- }; 
+    const newTodo = { id: id, title: title, completed: isChecked };
+    console.log({ newTodo });
+    dispatch(actions.getTodo(newTodo));
+  };
+  return (
+    <CheckBox>
+      {todo &&
+        todo.map((item: any, index: any) => {
+          return (
+            <CheckBoxes key={index}>
+              <Input
+                id="check-box"
+                onChange={(e) => changeHandler(e, item.id, item.title)}
+              />
+              <Label className="checkbox-label" htmlFor="check-box">
+                {item.title}
+              </Label>
+            </CheckBoxes>
+          );
+        })}
+    </CheckBox>
+  );
+};
 
- 
- export default Checkbox1;
+export default Checkbox1;

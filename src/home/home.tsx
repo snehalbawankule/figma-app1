@@ -2,10 +2,11 @@ import React from "react";
 import Shape from '../assets/images/shape1.png';
 import Statusbar from '../assets/images/Statusbar.png';
 import {Container,NotoTextWrap,ViewStatusbar,} from '../splash/splash.styled';
-import Checkbox from '../checkbox/checkbox';
+//import Checkbox from '../checkbox/checkbox';
 import {Top, ShapeEllipse,ProfilePic, Clock, TaskList,DailyTasks,Box} from './home.styled';
 import profile from '../assets/images/profile.png';
 import clock from '../assets/images/clock.jpg';
+import Checkbox1 from "../checkbox/checkbox";
 function Home() {
   return (
       <Container>
@@ -21,7 +22,7 @@ function Home() {
              <TaskList>Tasks list</TaskList>
              <Box>
              <DailyTasks>Daily Tasks</DailyTasks>
-               <Checkbox/>
+               <Checkbox1/>
              </Box>
        </Container>
      );

@@ -1,10 +1,14 @@
-  /*import { useDispatch } from "react-redux";
- 
-  const fetchTodo=()=>{
-        fetch('https://jsonplaceholder.typicode.com/todos/')
-        .then(response => response.json())
-        .then(json => dispatch(actions.addTodo))
-        .catch(error => console.log(error));
-       };
+import { createAsyncThunk } from "@reduxjs/toolkit";
 
-export default fetchTodo;*/
+import { actions } from "./reducer";
+
+export const addTodo = createAsyncThunk(
+  "todos/addTodo",
+  async (_, { dispatch }) => {
+    return fetch("https://jsonplaceholder.typicode.com/todos/")
+      .then((res) => res.json())
+      .then((json) => {
+        dispatch(actions.addTodo(json));
+      });
+  }
+);
